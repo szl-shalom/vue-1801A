@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        * {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div>
+        <ul>
+            <li>
+                <dl>
+                    <dd>
+                        <img src="" alt="">
+                    </dd>
+                    <dt>
+                        我是标题
+                    </dt>
+                </dl>
+            </li>
+        </ul>
+    </div> -->
+    <div id="app">
+        <ul>
+            <li v-for="(item,ind) in list">
+                {{ item.name }}
+                <ol v-if="item.flag">
+                    <li v-for="item in item.children" v-if="item.name">
+                        {{item.name}}
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                list: [{
+                    name: "item1",
+                    flag: true,
+                    children: [{
+                        name: "item1-1"
+                    }, {
+                        name: "item1-2"
+                    }, {
+                        name: "item1-3"
+                    }]
+                }, {
+                    name: "item2",
+                    flag: false,
+                    children: [{
+                        name: "item2-1"
+                    }, {
+                        name: "item2-2"
+                    }, {
+                        name: "item2-3"
+                    }]
+                }, {
+                    name: "item3",
+                    flag: true,
+                    children: [{
+                        name: "item3-1"
+                    }, {
+
+                    }, {
+                        name: "item3-3"
+                    }]
+                }],
+            }
+        })
+
+        // 1-1 核心循环指令 
+        // 1-1-1 遍历数组  v-for="(item,index) in 数组"  item是数组的每一位 index是对应的下标
+        // 1-1-2 遍历遍历  v-for="(val,key) in 对象"  val是对象的键值  key是对象的键名
+    </script>
+</body>
+
+</html>

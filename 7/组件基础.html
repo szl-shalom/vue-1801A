@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ mes }}</h1>
+        <content-header></content-header>
+        <content-header></content-header>
+        <content-header></content-header>
+        <content-header></content-header>
+        <content-header></content-header>
+        <content-header></content-header>
+        <content-header></content-header>
+        <content-header></content-header>
+    </div>
+    <script>
+        // 1、组件
+        // 在页面里面，每一个标签都是一个"组件"
+        // Vue组件其实就是把 html+css+js组建成的部件 =>  组件
+        // 特点：可维护   可复用    高效    
+
+
+        // 1.全局注册组件
+        // 规则：注册  我们可以使用  content-header
+        //         contentHeader
+        //         ContentHeader
+
+        // 使用上 ： 必须使用 中划线 content-header
+
+
+
+        Vue.component("content-header", {
+            // 必须有根标签
+            template: `
+            <div>
+                <span>{{ a }}</span>
+                <button @click="a++">点我</button>
+            </div>
+            `,
+            // 在组件当中 data必须是一个函数 函数返回一个对象
+            // 每一个函数具有局部作用域  所以每一个数据是独一无二的 
+            // 组件多次使用互不影响
+            data() {
+                return {
+                    a: 123
+                }
+            }
+        })
+
+
+        new Vue({
+            el: "#app",
+            data: {
+                mes: "Vue Component !!!"
+            }
+        })
+
+
+        // 1、声明组件
+        // 1-1、全局注册
+        // 1-2、局部注册
+        // 2、注册
+        // 3、使用
+    </script>
+</body>
+
+</html>

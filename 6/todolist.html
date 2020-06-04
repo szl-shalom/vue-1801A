@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" @keyup.enter="fn" v-model="mes">
+        <h2>
+            进行
+            <span>{{ num1 }}</span>
+        </h2>
+        <ul>
+            <li v-for="(item,index) in process" :key="item">
+                <input type="checkbox" @click="change(index)">
+                <span>{{ item }}</span>
+                <b @click="process.splice(index,1)">X</b>
+            </li>
+        </ul>
+
+        <h2>
+            完成
+            <span>{{ num2 }}</span>
+        </h2>
+        <ul>
+            <li v-for="(item,index) in finish" :key="item">
+                <input type="checkbox" checked @click="changeTo(index)">
+                <span>{{ item }}</span>
+                <b @click="finish.splice(index,1)">X</b>
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                process: ["item1", "item2", "item3"],
+                finish: ["item4", "item5", "item6"],
+                mes: "",
+            },
+            methods: {
+                fn() {
+                    // 将input的推入数组
+                    this.process.push(this.mes);
+                    // 清空数据
+                    this.mes = "";
+                },
+                change(index) {
+                    let item = this.process.splice(index, 1)[0]
+                    this.finish.push(item)
+                },
+                changeTo(index) {
+                    let item = this.finish.splice(index, 1)[0]
+                    this.process.push(item)
+                }
+            },
+            computed: {
+                num1() {
+                    return this.process.length
+                },
+                num2() {
+                    return this.finish.length
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

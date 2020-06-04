@@ -1,0 +1,131 @@
+const bookMallData =  [
+			{
+				"id": 1009,
+				"title": "铁拳争锋",
+				"roles": ["萧云龙", "柳如烟"],
+				"author": "梁七少",
+				"words": 6295891,
+				"status": "completed",
+				"avatar": "https:\/\/qcdn.zhangzhongyun.com\/covers\/15360423236152.jpg?imageView2\/0\/w\/300\/q\/75",
+				"summary": "    铁拳所向，试问谁可争锋？\r\n    义胆柔情，各色美人争宠！\r\n    他，就是终极教官，当世大魔王！\r\n    为美人无限张狂；为兄弟两肋插刀；为亲人誓死守护！\r\n    尸山血海中杀伐，累累白骨中踏步，蓦然回首，已傲立巅峰，成就传奇霸业！\r\n",
+				"first_article_id": 441149,
+				"article_count": 2149,
+				"free_time_start": 0,
+				"free_time_end": 0,
+				"tip_welth_sum": 46880,
+				"tags": ["热血", "都市", "情感", "暧昧", "逆袭"],
+				"banner_url": null,
+				"gender": "male",
+				"is_time_limited_free": false,
+				"score": 10,
+				"category": {
+					"id": 11,
+					"name": "都市",
+					"gender": "male"
+				},
+				"buy_mode": 0
+			}, {
+				"id": 7404,
+				"title": "余生尽是你温柔",
+				"roles": ["陆一语", "刘婉宁"],
+				"author": "也非",
+				"words": 2591930,
+				"status": "ongoing",
+				"avatar": "https:\/\/qcdn.zhangzhongyun.com\/covers\/15360280407500.jpg?imageView2\/0\/w\/300\/q\/75",
+				"summary": "陆家有两个女儿，小女儿是天上的月亮，大女儿是阴沟里的死狗。陆妈：你长得不如你妹妹，脑子不如你妹妹，身材不如你妹妹，运气不如你妹妹，你有什么资格过得好，有什么资格幸福？陆微言：姐姐，你的钱是我的、房子是我的，你男朋友也是我的。你就安心地当又穷又没人要的老处……女吧。陆一语：凭什么？我也肤白貌美大长腿好么？分分钟能找个男人嫁了。陆一语的男友被她亲妹妹抢了，她的建筑设计图被她妈妈转手卖了。就在她因偷卖设计图面临坐牢时，一个她从未敢肖想且权势涛天男人出现了。霍予沉看了看手表，“还有半个小时民政局关门，你知道该怎么做。”",
+				"first_article_id": 3420364,
+				"article_count": 1275,
+				"free_time_start": 0,
+				"free_time_end": 0,
+				"tip_welth_sum": 2352,
+				"tags": ["总裁豪门", "虐恋", "暖宠", "婚恋", "都市", "情感"],
+				"banner_url": null,
+				"gender": "female",
+				"is_time_limited_free": false,
+				"score": 9.9,
+				"category": {
+					"id": 15,
+					"name": "总裁",
+					"gender": "female"
+				},
+				"buy_mode": 0
+			}, {
+				"id": 7094,
+				"title": "都市强尊",
+				"roles": ["林君河", "楚默心"],
+				"author": "桔梗",
+				"words": 2751531,
+				"status": "ongoing",
+				"avatar": "https:\/\/qcdn.zhangzhongyun.com\/covers\/15357778819294.jpg?imageView2\/0\/w\/300\/q\/75",
+				"summary": "一代仙尊，惨遭背叛，死在最爱的女人手里。意外重生都市，却成为一个吸毒的弃少。本想潜心修炼，重回一世之巅，九天十地唯我独尊，却因身边的美女而麻烦不断。不对，我怎么突然多了一个老婆？！是要当一个禽兽，还是一个禽兽不如的人，林君河感到很纠结。",
+				"first_article_id": 3316034,
+				"article_count": 1339,
+				"free_time_start": 0,
+				"free_time_end": 0,
+				"tip_welth_sum": 1676,
+				"tags": ["都市", "高手", "护美", "爽文", "情感"],
+				"banner_url": null,
+				"gender": "male",
+				"is_time_limited_free": false,
+				"score": 9.7,
+				"category": {
+					"id": 11,
+					"name": "都市",
+					"gender": "male"
+				},
+				"buy_mode": 0
+			}, {
+				"id": 7402,
+				"title": "爱舍难分",
+				"roles": ["宋喜", "乔治笙"],
+				"author": "鱼不语",
+				"words": 2525983,
+				"status": "ongoing",
+				"avatar": "https:\/\/qcdn.zhangzhongyun.com\/covers\/15361131338082.jpg?imageView2\/0\/w\/300\/q\/75",
+				"summary": "宋喜听着身边人用‘横行霸道’‘一手遮天’甚至是‘无恶不作’这样的字眼形容乔治笙时，她在心中淡定的想到：嗐，我老公嘛。\r\n乔治笙听着身边人用‘白衣天使’‘最美医生’甚至是‘心慈面善’来形容宋喜时，他在心中冷静的想到：这厮绝对不是我老婆。\r\n正所谓，两狐相斗，慧者胜；两狼相斗，狠者胜；\r\n夫妻相斗……谁先从床上下来，谁胜。",
+				"first_article_id": 3418851,
+				"article_count": 1192,
+				"free_time_start": 0,
+				"free_time_end": 0,
+				"tip_welth_sum": 2764,
+				"tags": ["都市", "言情", "情感", "暧昧", "甜宠", "轻松", "幽默"],
+				"banner_url": null,
+				"gender": "female",
+				"is_time_limited_free": false,
+				"score": 9.9,
+				"category": {
+					"id": 35,
+					"name": "婚恋",
+					"gender": "female"
+				},
+				"buy_mode": 0
+			}, {
+				"id": 5535,
+				"title": "修仙狂龙",
+				"roles": ["唐铮", "方诗诗"],
+				"author": "唐箫",
+				"words": 5184864,
+				"status": "ongoing",
+				"avatar": "https:\/\/qcdn.zhangzhongyun.com\/covers\/15329434593090.jpg?imageView2\/0\/w\/300\/q\/75",
+				"summary": "为了活命就必须靠近女人，这是什么破规矩？唐铮拥有九阳圣体这千年难遇的身体，却不得不吸收纯阴之力才能活命，为了活命，拼了！绝美校花、女神老师、妩媚少妇、傲娇萝莉……形形色色的女人走进了他的生活，令他纵意花丛，笑傲都市！",
+				"first_article_id": 2605652,
+				"article_count": 1849,
+				"free_time_start": 0,
+				"free_time_end": 0,
+				"tip_welth_sum": 3240,
+				"tags": ["都市", "玄幻", "修真", "逆袭", "强者", "暧昧"],
+				"banner_url": null,
+				"gender": "male",
+				"is_time_limited_free": false,
+				"score": 9.7,
+				"category": {
+					"id": 11,
+					"name": "都市",
+					"gender": "male"
+				},
+				"buy_mode": 0
+			},
+		]
+module.exports = {
+	bookMallData
+}

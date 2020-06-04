@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="title">
+            <span v-for="(item,index) in arr" @click="ind=index" :class="{active:ind===index}">{{ item }}</span>
+            <img :src="url" alt="">
+        </div>
+    </div>
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                arr: ["item1", "item2", "item3", "item4"],
+                ind: 0,
+            },
+            computed: {
+                url() {
+                    return `img/${this.ind + 1}.jpg`
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>

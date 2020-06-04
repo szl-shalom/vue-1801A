@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ flag ? "真" :"假" }}</h1>
+        <h2>{{  "qwe"  }}</h2>
+        <a v-bind:href="site">百度</a>
+        <p :style="{background:'red'}">123123</p>
+
+        <h1>判断语句</h1>
+
+        <p v-if="type===1">1</p>
+        <p v-else-if="type===2">2</p>
+        <p v-else-if="type===3">3</p>
+        <p v-else-if="type===4">4</p>
+        <p v-else>默认</p>
+
+        <!-- <template v-if="isShow">
+            <p>哈哈哈2</p>
+            <p>哈哈哈3</p>
+            <p>哈哈哈4</p>
+            <h2>hahahahah </h2>
+        </template> -->
+
+    </div>
+
+
+
+    <script>
+        let vm = new Vue({
+            // 绑定数据
+            data: {
+                qwe: "hello Vue!!!",
+                site: "http://www.baidu.com",
+                obj: {
+                    background: "red",
+                    color: "#fff",
+                },
+                flag: true,
+                isShow: true,
+                type: 1
+            },
+            el: "#app"
+        })
+
+        // 1-1 模板编译
+        // 1-1-1 优先编译template    模板  必须有一个根标签（必须有一个标签包裹着所有的元素）
+        // 1-1-2 上面不存在 在编译el下的节点  *** 
+
+        // 1-2 挂载节点
+        // 1-2-1 通过实例过程中 el : 挂载的节点  ***
+        // 1-2-2 实例化之后 通过方法 实例方法$mount(挂载的节点)
+
+
+        // 1-3 模板指令
+        // 1-3-1 v-html     可以识别标签
+        // 1-3-2 v-text     简写{{}}***
+
+        // 1-4 属性指令  v-bind:属性名称="属性值"  b-bind: 缩写 :(推荐)
+        // 1-4-1 class  ***
+        // 1-4-2 style
+
+        // 1-5 判断指令
+        // 1-5-1 v-if      真值正常渲染  假值不会渲染  ***
+        // 1-5-2 v-show    真值正常显示  假值隐藏      ***
+        // 效率问题：v-show 比 v-if效率高
+        // 如果你是根据数据渲染一次  这个是推荐v-if
+        // 如果你频繁根据数据操作页面  推荐v-show
+        // 六个假值   0  "" NaN undefined null  false
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 双向数据绑定 -->
+        <input type="text" v-model="mes">
+        <!-- 解析 -->
+        <input type="text" v-model="mes">
+        <h1>处理单选</h1>
+        <p>爱好</p>
+        <input type="radio" v-model="res" value="篮球" name="like"> 篮球
+        <input type="radio" v-model="res" value="足球" name="like"> 足球
+        <input type="radio" v-model="res" value="冰棒球" name="like"> 冰棒球
+        <p>
+            结果 {{  res }}
+        </p>
+
+
+        <h1>处理多选</h1>
+        <p>爱好</p>
+        <input type="checkbox" v-model="arr" value="篮球" name="like"> 篮球
+        <input type="checkbox" v-model="arr" value="足球" name="like"> 足球
+        <input type="checkbox" v-model="arr" value="冰棒球" name="like"> 冰棒球
+        <p>
+            结果 {{  arr }}
+        </p>
+
+        <h1>下拉菜单 </h1>
+        <select name="" id="" v-model="result">
+            <option value="1">item1</option>
+            <option value="2">item2</option>
+            <option value="3">item3</option>
+            <option value="4">item4</option>
+        </select>
+        <p>
+            结果：{{ result }}
+        </p>
+
+        <h1>修饰符</h1>
+        <input type="text" v-model.trim="p1">
+        结果： {{  p1 }}
+
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                mes: "大家好",
+                res: "冰棒球",
+                arr: [],
+                result: "0",
+                p1: 1
+            }
+        })
+
+        // 1、模板指令 
+        // 数据 => 视图
+        // v-text   {{  }}
+        // v-html
+
+        // 数据 <=> 视图
+        // 1.v-model  一般处理表单元素 
+        // 1-1  input[type="text||password||url|eamil"]
+        // 1-2  input[type="radio"]  单选
+        // 1-3  input[type="checkbox"]
+        // 1-4  select
+
+        //1-5 v-model 修饰符
+        // lazy     失去焦点的时候在更新数据
+        // number   转化为数字
+        // trim     去除两端无效空格
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ num3 }}</p>
+        <p>{{ num3 }}</p>
+        <p>{{ num3 }}</p>
+
+        <p>{{ num() }}</p>
+        <p>{{ num() }}</p>
+        <p>{{ num() }}</p>
+
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                num1: 1,
+                num2: 2
+            },
+            // 方法
+            methods: {
+                num() {
+                    console.log("方法执行了")
+                    return this.num1 + this.num2
+                }
+            },
+            // 计算属性  (缓存)  相对于method效率比较高  因为有缓存
+            computed: {
+                // num3() {
+                //     console.log("计算属性执行了")
+                //     return this.num1 + this.num2
+                // }
+
+                
+                // num3: {
+                //     get() {
+                //         console.log("计算属性执行了")
+                //         return this.num1 + this.num2
+                //     },
+                //     set(val) {
+                //         console.log(val)
+                //     }
+                // },
+
+                num3() {
+                    console.log("计算属性执行了")
+                    return this.num1 + this.num2
+                }
+            },
+
+        })
+
+
+        // 1、事件指令 v-on:事件名称="js代码";
+        // 1-1  行内javascript代码
+        // 1-2  执行方法  比较复杂的逻辑使用方法    **** 
+        // 2、methods方法
+
+        // 3、computed计算属性
+        //  用起来像属性
+        //  定义像函数
+        //  值是函数的返回值 
+
+        // 如果计算属性是一个函数  其实j就是默认的set函数
+    </script>
+</body>
+
+</html>

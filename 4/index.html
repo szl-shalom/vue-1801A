@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p v-text="res"></p>
+        <a v-bind:href="site">点我跳转到百度</a>
+        <hr>
+        <h1>特殊的class和style</h1>
+        <p v-bind:class="[p1,p2,{active2:isActive}]" class="qwe">class</p>
+        <p :style="objStyle">style</p>
+        <hr>
+        <h1>循环指令</h1>
+        <ul>
+            <li v-for="(item,index) in list" >{{ item }}</li>
+        </ul>
+        <h1>
+            Tab切换
+        </h1>
+  
+        <div>
+            <span v-for="(item,index) in arr" :class="{active:index==ind}" v-on:click="ind=index">{{ item.title }}</span>
+        </div>
+ 
+        <div>
+            {{ arr[ind].content }}
+        </div>
+    </div>
+
+
+    <script>
+        // 新建Vue实例
+        let vm = new Vue({
+            // 挂载的节点
+            el: "#app",
+            // 绑定数据 (双向绑定的数据)
+            data: {
+                res: "<b>hello Vue</b>",
+                site: "http://www.baidu.com",
+                className: "active",
+                isActive: true,
+                p1: "active",
+                p2: "active1",
+                objStyle: {
+                    background: "red",
+                },
+                list: ["a", "b", "c"],
+                arr: [{
+                    title: "标题1",
+                    content: "内容1"
+                },
+                {
+                    title: "标题2",
+                    content: "内容2"
+                }, {
+                    title: "标题3",
+                    content: "内容3"
+                }],
+                ind: 0
+            },
+        })
+
+    //   1、模板指令 
+    //   1-1  v-text文本执行     简写 {{}}  innerText
+    //   1-2  v-html转化成节点              innerHTML
+    //   2、属性指令 v-bind:属性名称="值"   v-bind: 缩写 :
+    //   2-1 特殊的属性class
+    //   2-1-1 可以写对象
+    //   v-bind:class={active:true} 是否添加active类名取决于后边的布尔值
+    //   2-1-2 可以写数组
+    //   v-bind:class=[p1,p2] 获取p1,p2的值作为类名
+    //   2-2 特殊的属性style
+    //   3.循环指令 
+    //   v-for="(item,index) in 数据"
+    //   4.绑定事件
+    //   v-on:click = ""
+    </script>
+</body>
+
+</html>

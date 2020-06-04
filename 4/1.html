@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Cash {
+            constructor(...par) {
+                this.num = 0;
+                par.forEach((item) => {
+                    if (item instanceof Cash) {
+                        this.num += item.this.num;
+                    } else {
+                        this.num += item;
+                    }
+                })
+            }
+            add(...par) {
+                let num = this.num;
+                par.forEach((item) => {
+                    if (item instanceof Cash) {
+                        num += item.num;
+                    } else {
+                        num += item;
+                    }
+                })
+                let a = parseInt(num / 100)
+                let b = parseInt(num % 10)
+                let c = parseInt(num / 10 % 10)
+                return `${a}元${b}角${c}分`;
+            }
+            static add(...par) {
+                let num = 0;
+                par.forEach((item) => {
+                    if (item instanceof Cash) {
+                        num += item.num;
+                    } else {
+                        num += item;
+                    }
+                })
+                let a = parseInt(num / 100)
+                let b = parseInt(num % 10)
+                let c = parseInt(num / 10 % 10)
+                return `${a}元${b}角${c}分`;
+            }
+            toString() {
+                return this.num
+            }
+        }
+
+        const cash1 = new Cash(105);
+        const cash2 = new Cash(66);
+
+        // console.log(cash1, cash2)
+
+        const cash3 = cash1.add(cash2);
+
+        // console.log(cash3)
+
+
+        const cash4 = Cash.add(cash1, cash2);
+
+        // console.log(cash4)
+
+        const cash5 = new Cash(cash1 + cash2);
+
+        // console.log(cash5)
+
+        console.log(`${cash3}, ${cash4}, ${cash5}`)
+    </script>
+</body>
+
+</html>
